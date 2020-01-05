@@ -15,7 +15,7 @@ This is the classic hello world web application, written in Go, which this tutor
 package main
 
 import (
-    "github.com/hoisie/web"
+    "github.com/aisk/web"
 )
 
 func hello(val string) string { 
@@ -55,7 +55,7 @@ Although handlers usually return a string, web.go also accepts handler functions
 package main
 
 import (
-    "github.com/hoisie/web"
+    "github.com/aisk/web"
 )
 
 func hello(ctx *web.Context, val string) { 
@@ -108,7 +108,7 @@ You can also call `Header` on the to get the actual response header map. This ha
 package main
 
 import (
-    "github.com/hoisie/web"
+    "github.com/aisk/web"
 )
 
 func hello(ctx *web.Context, val string) string {
@@ -132,7 +132,7 @@ web.Context has a method `SetCookie` that takes an http.Cookie object and sets i
 package main
 
 import (
-    "github.com/hoisie/web"
+    "github.com/aisk/web"
 )
 
 func hello(ctx *web.Context, val string) string {
@@ -157,7 +157,7 @@ package main
 
 import (
     "bytes"
-    "github.com/hoisie/web"
+    "github.com/aisk/web"
     "io"
 )
 
@@ -174,9 +174,9 @@ func main() {
 }
 {% endhighlight %}
 
-Using `ctx.Write`, web.go allows you to maintain long-running HTTP connections and send back results periodically. See the [streaming example](https://github.com/hoisie/web/blob/master/examples/streaming.go) for more details.
+Using `ctx.Write`, web.go allows you to maintain long-running HTTP connections and send back results periodically. See the [streaming example](https://github.com/aisk/web/blob/master/examples/streaming.go) for more details.
 
-Note, when calling `ctx.Write` and `ctx.WriteString`, the content will be buffered until the handler has completed. Many ResponseWriter objects have a `Flush` method that can be used to flush the content into the HTTP connection. An example of this is also available in the [streaming example](https://github.com/hoisie/web/blob/master/examples/streaming.go).
+Note, when calling `ctx.Write` and `ctx.WriteString`, the content will be buffered until the handler has completed. Many ResponseWriter objects have a `Flush` method that can be used to flush the content into the HTTP connection. An example of this is also available in the [streaming example](https://github.com/aisk/web/blob/master/examples/streaming.go).
 
 ## Templates
 
@@ -199,7 +199,7 @@ These methods are similar to web.Run:
 
 * web.RunScgi(addr) serves SCGI requests. (example below)
 * web.RunFcgi(addr) serves FastCGI requests.
-* web.RunTLS(addr, tlsContext) serves HTTPS request. See the [example](https://github.com/hoisie/web/blob/master/examples/tls.go) for details.
+* web.RunTLS(addr, tlsContext) serves HTTPS request. See the [example](https://github.com/aisk/web/blob/master/examples/tls.go) for details.
 
 For instance, to serve the hello example above running Scgi, just write the following:
 
@@ -207,7 +207,7 @@ For instance, to serve the hello example above running Scgi, just write the foll
 package main
 
 import (
-    "github.com/hoisie/web"
+    "github.com/aisk/web"
 )
 
 func hello(val string) string { 
@@ -228,6 +228,6 @@ If you have an issue you'd like to debug in web.go, you'll want to modify the so
 
 By default, when you run `go get package`, the installer will fetch the source code and install the package in the directory specified by `$GOPATH`. If `$GOPATH` is not set, the library is installed in the `$GOROOT/pkg` folder, which defaults to where Go is built. As a developer of Go libraries, it is much more convenient to set a `$GOPATH` variable to a location like `$HOME/golibs` or `$HOME/projects/golibs`. See [how to write Go code](http://golang.org/doc/code.html) for more details. The first step to developing web.go is to ensure that you have an appropriate `$GOPATH` with two sub-directories: `src` and `pkg`. 
 
-Next, you should run `cd $GOPATH/src && git clone github.com/hoisie/web`. This creates a clone of the web.go repo in `$GOPATH/src/web`. Next, run `cd GOPATH/src/web && go install`. This will install the `web` package into `$GOPATH/pkg`. 
+Next, you should run `cd $GOPATH/src && git clone github.com/aisk/web`. This creates a clone of the web.go repo in `$GOPATH/src/web`. Next, run `cd GOPATH/src/web && go install`. This will install the `web` package into `$GOPATH/pkg`. 
 
 From now on, if you include web.go, you should use `import web`, and this will link to the files that are in `$GOPATH/pkg`. You can now modify the web.go source code in `$GOPATH/src/web`, rebuild with `go install`, and then rebuild your target appication.

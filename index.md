@@ -9,7 +9,7 @@ title: Quickstart
 
 Web.go assumes you have a working Go environment. If you do installation is a breeze:
 
-    go get github.com/hoisie/web
+    go get github.com/aisk/web
 
 ## Getting started
 
@@ -19,7 +19,7 @@ This is a simple hello world web application, written in Go:
 package main
 
 import (
-    "github.com/hoisie/web"
+    "github.com/aisk/web"
 )
 
 func hello(val string) string { 
@@ -46,4 +46,4 @@ For more detailed information about writing apps in web.go, check out the [tutor
 
 ## Development
 
-Follow development of web.go on [github](http://github.com/hoisie/web)
+Follow development of web.go on [github](http://github.com/aisk/web)
