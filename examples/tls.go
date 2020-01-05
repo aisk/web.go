@@ -2,7 +2,7 @@ package main
 
 import (
 	"crypto/tls"
-	"github.com/hoisie/web"
+	"github.com/aisk/web"
 )
 
 // an arbitrary self-signed certificate, generated with

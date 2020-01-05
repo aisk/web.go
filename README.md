@@ -1,8 +1,14 @@
-[![Build Status](https://travis-ci.org/hoisie/web.svg?branch=master)](https://travis-ci.org/hoisie/web)
+[![Build Status](https://travis-ci.org/aisk/web.svg?branch=master)](https://travis-ci.org/aisk/web)
 
 # web.go
 
 web.go is the simplest way to write web applications in the Go programming language. It's ideal for writing simple, performant backend web services. 
+
+This project is forked from [hoisie/web.go](hoisie) since the original project is not under maintained. The changes made after the fork:
+
+- Migrate to go module;
+- Compatible with new go versions and dropped support old version (go1.9~go1.13);
+- `*web.Context` implemented the `context.Context` interface.
 
 ## Overview
 
@@ -20,11 +26,11 @@ Make sure you have the a working Go environment. See the [install instructions](
 
 To install web.go, simply run:
 
-    go get github.com/hoisie/web
+    go get github.com/aisk/web
 
 To compile it from source:
 
-    git clone git://github.com/hoisie/web.git
+    git clone git://github.com/aisk/web.git
     cd web && go build
 
 ## Example
@@ -32,7 +38,7 @@ To compile it from source:
 package main
     
 import (
-    "github.com/hoisie/web"
+    "github.com/aisk/web"
 )
     
 func hello(val string) string { return "hello " + val } 
@@ -57,7 +63,7 @@ Route handlers may contain a pointer to web.Context as their first parameter. Th
 package main
 
 import (
-    "github.com/hoisie/web"
+    "github.com/aisk/web"
 )
     
 func hello(ctx *web.Context, val string) { 
@@ -79,7 +85,7 @@ In this example, if you visit `http://localhost:9999/?a=1&b=2`, you'll see the f
 
 ## Documentation
 
-API docs are hosted at https://hoisie.github.io/web/
+API docs are hosted at https://aisk.github.io/web/
 
 If you use web.go, I'd greatly appreciate a quick message about what you're building with it. This will help me get a sense of usage patterns, and helps me focus development efforts on features that people will actually use. 
 
