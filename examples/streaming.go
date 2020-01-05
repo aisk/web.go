@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/hoisie/web"
+	"github.com/aisk/web"
 	"net/http"
 	"strconv"
 	"time"

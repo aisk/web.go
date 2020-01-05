@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"crypto/md5"
 	"fmt"
-	"github.com/hoisie/web"
+	"github.com/aisk/web"
 	"io"
 )
 
